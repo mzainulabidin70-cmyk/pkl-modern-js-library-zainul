@@ -14,8 +14,6 @@ export async function readJson(filePath) {
     throw error;
   }
 }
-
-
 export async function writeJson(filePath, data) {
   const jsonString = JSON.stringify(data, null, 2);
   await fs.writeFile(filePath, jsonString, 'utf-8');
