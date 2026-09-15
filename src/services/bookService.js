@@ -13,3 +13,12 @@ export function calculateBookStats(books) {
 
     return { totalTitles, totalStock, outOfStock };
 }
+
+export function updateBookStock(books, bookId, newStock) {
+    if (newStock < 0) throw new Error("Stock tidak boleh negatif");
+
+    const bookExits = books.some(b => b.id === bookId);
+    if (!bookExits) throw new Error("ID buku tidak ditemukan");
+
+    return book.map(book => book.id === bookId ? {...book, stock: newStock} : book);
+}
