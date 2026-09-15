@@ -22,3 +22,16 @@ export function updateBookStock(books, bookId, newStock) {
 
     return book.map(book => book.id === bookId ? {...book, stock: newStock} : book);
 }
+
+export function buildCatalog(books, authors) {
+  return books.map(book => {
+    const author = authors.find(a => a.id === book.authorId);
+    return {
+      id: book.id,
+      title: book.title,
+      authorName: author ? author.name : "Unknown",
+      stock: book.stock,
+      available: book.stock > 0
+    };
+  });
+}
