@@ -1,0 +1,6 @@
+[
+  { "id": "B01", "title": "Laskar Pelangi", "authorId": "P01", "stock": 4, "categories": ["novel", "pendidikan"] },
+  { "id": "B02", "title": "Bumi Manusia", "authorId": "P02", "stock": 2, "categories": ["novel", "sejarah"] },
+  { "id": "B03", "title": "Harry Potter", "authorId": "P03", "stock": 0, "categories": ["fantasi", "novel"] },
+  { "id": "B04", "title": "Sang Pemimpi", "authorId": "P01", "stock": 3, "categories": ["novel"] }
+]
