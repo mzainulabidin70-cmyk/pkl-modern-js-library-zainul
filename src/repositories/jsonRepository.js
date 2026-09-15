@@ -21,3 +21,12 @@ export async function writeJson(filePath, data) {
   const jsonString = JSON.stringify(data, null, 2);
   await fs.writeFile(filePath, jsonString, 'utf-8');
 }
+
+export async function loadLibraryData() {
+  const [books, authors, loans] = await Promise.all([
+    readJson('./data/books.json'),
+    readJson('./data/authors.json'),
+    readJson('./data/loans.json')
+  ]);
+  return { books, authors, loans };
+}
