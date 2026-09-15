@@ -8,7 +8,7 @@ export function getAvailableBooks(books) {
 
 export function calculateBookStats(books) {
     const totalTitles = books.length;
-    const totalStock = books.Reduce((sum, book) => sum + book.stock, 0);
+    const totalStock = books.reduce((sum, book) => sum + book.stock, 0);
     const outOfStock = books.filter(book => book.stock === 0).length;
 
     return { totalTitles, totalStock, outOfStock };
@@ -20,7 +20,7 @@ export function updateBookStock(books, bookId, newStock) {
     const bookExits = books.some(b => b.id === bookId);
     if (!bookExits) throw new Error("ID buku tidak ditemukan");
 
-    return book.map(book => book.id === bookId ? {...book, stock: newStock} : book);
+    return books.map(book => book.id === bookId ? {...book, stock: newStock} : book);
 }
 
 export function buildCatalog(books, authors) {

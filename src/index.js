@@ -1,7 +1,7 @@
 import readline from 'readline';
 import { loadLibraryData, writeJson } from './repositories/jsonRepository.js';
 import { findBookById, getAvailableBooks } from './services/bookService.js';
-import { createLoan } from './services/loanService.js';
+import { createLoan } from './services/loanServices.js';
 import { generateLibraryReport } from './utils/reportFormatter.js';
 
 const rl = readline.createInterface({
